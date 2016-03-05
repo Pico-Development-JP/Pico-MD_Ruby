@@ -8,8 +8,8 @@
  * @license http://opensource.org/licenses/MIT
  * @version 1.0
  */
-class Pico_MD_Ruby {
-  public function after_parse_content(&$content)
+class Pico_MD_Ruby extends AbstractPicoPlugin {
+  public function onContentParsed(&$content)
   {
     $content = preg_replace('/\+\+(.+?)\|\|(.+?)\+\+/', '<ruby>\1<rp>(</rp><rt>\2</rt><rp>)</rp></ruby>', $content);
   }
