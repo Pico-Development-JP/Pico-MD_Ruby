@@ -6,9 +6,12 @@
  * @author TakamiChie
  * @link http://onpu-tamago.net/
  * @license http://opensource.org/licenses/MIT
- * @version 1.1
+ * @version 1.11
  */
 class Pico_MD_Ruby extends AbstractPicoPlugin {
+
+  protected $enabled = false;
+
   public function onContentParsed(&$content)
   {
     $content = preg_replace('/\+\+(.+?)\|\|(.+?)\+\+/', '<ruby>\1<rp>(</rp><rt>\2</rt><rp>)</rp></ruby>', $content);
